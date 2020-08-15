@@ -5,6 +5,8 @@ import com.example.finalexam.backend.model.Place;
 import com.example.finalexam.backend.repository.PlaceRepo;
 import com.example.finalexam.frontend.form.PlaceForm;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -18,8 +20,8 @@ import java.util.stream.Collectors;
 public class PlaceService {
     private final PlaceRepo placeRepo;
 
-    public List<PlaceDTO> getAll(){
-        return placeRepo.findAll().stream().map(PlaceDTO::from).collect(Collectors.toList());
+    public Page<PlaceDTO> getAll(Pageable pageable){
+        return placeRepo.findAll(pageable).map(PlaceDTO::from);
     }
 
     public void createPlace(PlaceForm placeForm) throws IOException {
