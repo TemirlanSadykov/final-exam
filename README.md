@@ -27,6 +27,7 @@ spring.datasource.username={root}
 spring.datasource.password={20tem04}
 ```
 Открыть MySQL и создать базу данных - final. 
+Запустить проект
 
 ## Собрано с помощью
 
