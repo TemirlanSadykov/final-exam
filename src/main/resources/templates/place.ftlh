@@ -6,8 +6,7 @@
             <#if _csrf??>
                 <input type="hidden" name="${(_csrf.parameterName)!'csrf'}" value="${(_csrf.token)!'--no-token--'}"/>
             </#if>
-
-            <h3 class="text-center">Add new place</h3>
+            <h3 class="text-center">Добавьте новое место</h3>
             <div class="form-group">
                 <label>Введите Название</label>
                 <input type="text" name="name" class="form-control" placeholder="Название" autofocus>
