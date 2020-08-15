@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
+
 @Service
 @AllArgsConstructor
 public class UserService {
@@ -26,6 +28,14 @@ public class UserService {
 
             userRepo.save(user);
             return null;
+        }
+    }
+    public String checkUser(Principal principal){
+        if(principal == null){
+            return null;
+        }
+        else {
+            return principal.getName();
         }
     }
 }
