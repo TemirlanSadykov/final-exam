@@ -3,14 +3,25 @@
 
     <div class="container flex flex-col align-center">
         <h1>All places</h1>
-        <main class="flex flex-wrap align-evenly">
-            <#list places as pl>
-                <div class="card">
-                        <img src="/images/${pl.photo}">
-                        <p>${pl.name}</p>
+        <input class="form-control" id="Input" type="text" placeholder="Поиск" style="margin-top: 20px; margin-bottom: 20px">
+        <div id="Table">
+            <#list items as place>
+                <div class="card" style=" display: inline-block; padding: 5px">
+                        <img src="/images/${place.photo}">
+                        <p>${place.name}</p>
                 </div>
             </#list>
-        </main>
+        </div>
     </div>
     <#include "partials/pagination.ftlh">
 </@main.renderWith>
+<script>
+    $(document).ready(function(){
+        $("#Input").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#Table div").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
