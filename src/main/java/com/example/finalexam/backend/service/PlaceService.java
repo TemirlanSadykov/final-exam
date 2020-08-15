@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -22,6 +23,10 @@ public class PlaceService {
 
     public Page<PlaceDTO> getAll(Pageable pageable){
         return placeRepo.findAll(pageable).map(PlaceDTO::from);
+    }
+
+    public PlaceDTO getById(Long id){
+        return PlaceDTO.from(placeRepo.findById(id).get());
     }
 
     public void createPlace(PlaceForm placeForm) throws IOException {
