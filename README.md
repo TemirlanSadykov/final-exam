@@ -26,7 +26,7 @@ spring.datasource.url=jdbc:mysql://localhost:3306/final?serverTimezone=UTC
 spring.datasource.username={root}
 spring.datasource.password={20tem04}
 ```
-Открыть MySQL и создать базу данных - final. 
+Открыть MySQL и создать базу данных - final. Сделать Import Changes.
 Запустить проект
 
 ## Собрано с помощью
