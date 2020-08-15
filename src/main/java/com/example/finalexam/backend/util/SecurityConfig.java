@@ -37,13 +37,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true);
 
         http.authorizeRequests()
-                .antMatchers("/places/**")
+                .antMatchers("/place/**")
                 .authenticated();
 
         http.authorizeRequests()
                 .antMatchers("/")
-                .anonymous()
-                .anyRequest()
                 .permitAll();
         http.csrf().disable();
     }
