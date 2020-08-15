@@ -27,7 +27,7 @@ spring.datasource.username={root}
 spring.datasource.password={20tem04}
 ```
 Открыть MySQL и создать базу данных - final. Сделать Import Changes.
-Запустить проект
+Запустить проект. Картинки лежат в папку src/main/resources/static/images/
 
 ## Собрано с помощью
 
